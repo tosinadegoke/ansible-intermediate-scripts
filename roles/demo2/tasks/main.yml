@@ -1,0 +1,11 @@
+---
+# tasks file for demo2
+- name: implement file tasks nad handlers
+  yum:
+   name: httpd
+   state: present
+- name: create a webpage
+  copy:
+   src: index.html
+   dest: /var/www/html/index.html
+  notify: role_demo2

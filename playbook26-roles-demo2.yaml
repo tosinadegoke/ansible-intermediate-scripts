@@ -1,0 +1,5 @@
+---
+- name: Roles in playbook
+  hosts: all
+  roles:
+  - demo2

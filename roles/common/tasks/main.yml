@@ -1,0 +1,15 @@
+---
+# tasks file for common roles
+- name: Install web-server package
+  yum:
+   name: httpd
+   state: present
+- name: copy webpage
+  copy:
+   src: index.html
+   dest: /var/www/html/index.html
+- name: start the service
+  service:
+   name: httpd
+   state: started
+   enabled: true

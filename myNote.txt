@@ -47,6 +47,7 @@ become_method=sudo
 become_user=root
 become_ask_pass=false
 
+
 >> mkdir -p group_vars/centos
 
 
@@ -67,4 +68,42 @@ Register and Debug
 - Debug Module - is used to print output
 
 - todisplay variable, use var. To display ofther info, use "msg"
+
+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
+
+ANSIBLE ROLE
+*****************
+- Ansible roles provide a way for you to mane it easier to reuse Ansible code generically.
+
+In an inventory file, the gorup name and the host name should not be the same.
+You have to specify in config file where you want Ansible to accesss the role file.
+- collections_path=collections/
+- roles_path=roles/
+- roles_path=/usr/share/ansible/roles:roles/		#the path for the system roles:userdefined role path
+
+
+dnf install rhel-system-roles -y
+>> ansible-galaxy role list
+>> ansible-galaxy collection list
+
+lacations
+>> mkdir collections roles		#
+
+Namespace > roles > coolection
+
+>> ansible-galaxy collection list
+
+>> ansible-galaxy collection install infra.aap_configuration -p collection/
+
+>> ansible-galaxy role init common		# to create your own roles
+
+JENKINS
+*******
+
+Installation
+************
+Jenkin is installed with java. Install the lastest version Java
+
+>> dnf install java-21-openjdk jenkins -y		
+
 

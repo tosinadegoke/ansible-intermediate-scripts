@@ -1,0 +1,12 @@
+---
+# tasks file for demo3
+- name: install httpd package
+  yum:
+   name: httpd
+   state: present
+
+- name: Copy the template
+  template:
+   src: main.j2
+   dest: /var/www/html/index.html
+  notify: role_demo3
